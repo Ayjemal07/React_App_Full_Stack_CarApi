@@ -3,20 +3,18 @@ import { createSlice } from '@reduxjs/toolkit'
 const rootSlice = createSlice({
     name: "root",
     initialState: {
-        first: "First Name",
-        last: "Last Name",
-        email: "Email",
-        phone_number: "Phone Number",
-        address: "Address",
+        make: "Make",
+        year: "Year",
+        model: "Model",
+        features: "Features",
     },
     reducers: {
-        chooseFirst: (state, action) => { state.first = action.payload},
-        chooseLast: (state, action) => { state.last = action.payload},
-        chooseEmail: (state, action) => { state.email = action.payload},
-        choosePhone: (state, action) => { state.phone_number = action.payload},
-        chooseAddress: (state, action) => { state.address = action.payload}
+        chooseMake: (state, action) => { state.make = action.payload},
+        chooseYear: (state, action) => { state.year= action.payload},
+        chooseModel: (state, action) => { state.model = action.payload},
+        chooseFeatures: (state, action) => { state.features = action.payload},
     }
 })
 
 export const reducer = rootSlice.reducer;
-export const { chooseFirst, chooseLast, chooseEmail, choosePhone, chooseAddress} = rootSlice.actions
+export const { chooseMake, chooseYear, chooseModel, chooseFeatures} = rootSlice.actions

@@ -8,17 +8,17 @@ import { useGetData } from '../custom-hooks/FetchData';
 
 const columns: GridColDef[] = [
     { field: 'id', headerName: "ID", width: 90},
-    { field: 'first', headerName: "Contact First Name", flex: 1},
-    { field: 'last', headerName: "Contact Last Name", flex: 1},
-    { field: 'email', headerName: "Email", flex: 1},
-    { field: 'phone_number', headerName: "Phone Number", flex: 1},
-    { field: 'address', headerName: "Address", flex: 1}
+    { field: 'make', headerName: "Make of the Car", flex: 1},
+    { field: 'year', headerName: "Year of the Car", flex: 1},
+    { field: 'model', headerName: "Model", flex: 1},
+    { field: 'features', headerName: "Features", flex: 1},
+ 
 ]
 
 
 function DataTable() {
     let [ open, setOpen ] = useState(false);
-    const { contactData, getData } = useGetData();
+    const { carData, getData } = useGetData();
     const [ selectionModel, setSelectionModel ] = useState<string[]>([])
 
     const handleOpen = () => {
@@ -50,7 +50,7 @@ function DataTable() {
                     className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white"
                     onClick={() => handleOpen()}
                 >
-                    Create New Contact
+                    Add New Car
                 </button>
             </div> 
             <Button onClick={handleOpen} className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white" >Update</Button>
@@ -59,9 +59,9 @@ function DataTable() {
         <div className={ open ? "hidden" : "container mx-10 my-5 flex flex-col"}
             style={{ height: 400, width: '100%'}}
         >
-            <h2 className="p-3 bg-slate-300 my-2 rounded">My Contacts</h2>
+            <h2 className="p-3 bg-slate-300 my-2 rounded">My Cars</h2>
             <DataGrid 
-            rows={contactData} 
+            rows={carData} 
             columns={columns}
             checkboxSelection={true} 
             onSelectionModelChange={ (item:any) => {
