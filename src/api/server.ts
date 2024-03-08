@@ -1,5 +1,8 @@
 const token = 'fed2fe461e66758f7a85ed2048528f8dcba90c556358b4f7'
 
+
+
+
 export const server_calls = {
     get: async () => { 
         const response = await fetch(`https://car-inventory-ye2a.onrender.com/api/cars`,
@@ -8,7 +11,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'x-access-token': `Bearer ${token}`
+                'x-access-token': token
             }
 
         });
@@ -27,7 +30,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'x-access-token': `Bearer ${token}`
+                'x-access-token': token
             },
             body: JSON.stringify(data)
 
@@ -47,7 +50,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'x-access-token': `Bearer ${token}`
+                'x-access-token': token
             },
             body: JSON.stringify(data)
 
@@ -67,7 +70,7 @@ export const server_calls = {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'x-access-token': `Bearer ${token}`
+                'x-access-token': token
             },
 
         })
